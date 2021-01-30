@@ -1,0 +1,54 @@
+version: "3.3"
+
+services:
+  # Managers
+  crypto-rate-manager:
+    restart: "always"
+    image: "crypto-rate-manager"
+    build:
+      context: ./services/crypto-rate-manager
+      dockerfile: Dockerfile
+    environment:
+      - CRYPTO_RATE_FETCHER_URL=http://crypto-rate-fetcher:3000
+      - CRYPTO_RATE_ACCESSOR_URL=http://raw-crypto-rate:3000
+    ports:
+      - 6009:3000
+  # Engines
+  crypto-rate-fetcher:
+    restart: "always"
+    image: "crypto-rate-fetcher"
+    build:
+      context: ./services/crypto-rate-fetcher
+      dockerfile: Dockerfile
+    environment:
+      - CRYPTOCOMPARE_API_KEY=5b4601e1b2be7c779dca7ef5e5011c9b2f246c6cb6bd32baf709f5817a46cbf1
+      - CRYPTOCOMPARE_API_URL=https://min-api.cryptocompare.com/data/pricemulti
+      - COINMARKETCAP_API_KEY=6814b18d-4c0a-41f8-8d7a-d08dae63515b
+      - COINMARKETCAP_API_URL=https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest
+    ports:
+      - 6002:3000
+  # Accessors
+  raw-crypto-rate:
+    restart: "always"
+    image: "raw-crypto-rate"
+    build:
+      context: ./services/raw-crypto-rate
+      dockerfile: Dockerfile
+    depends_on:
+      - "db"
+    ports:
+      - 6003:3000
+  #db
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'crypto_rates'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: password
+      # Where our data will be persisted
+    volumes:
+      - db_data:/var/lib/mysql
+# Names our volume
+volumes:
+  db_data: {}
