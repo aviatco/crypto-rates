@@ -16,13 +16,6 @@ These instructions will get you a copy of the project up and running on your loc
 > - For windows you can install docker desktop for windows: https://docs.docker.com/docker-for-windows/install/
 
 ## Run project
-Run frontend:
-> - cd Frontend
-> - docker-compose build
-> - docker-compose up
-
-Run backend
-> - cd Backend
 > - docker-compose build
 > - docker-compose up
 
