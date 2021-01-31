@@ -6,7 +6,7 @@ services:
     restart: "always"
     image: "crypto-rate-manager"
     build:
-      context: ./services/crypto-rate-manager
+      context: ./Backend/services/crypto-rate-manager
       dockerfile: Dockerfile
     environment:
       - CRYPTO_RATE_FETCHER_URL=http://crypto-rate-fetcher:3000
@@ -18,7 +18,7 @@ services:
     restart: "always"
     image: "crypto-rate-fetcher"
     build:
-      context: ./services/crypto-rate-fetcher
+      context: ./Backend/services/crypto-rate-fetcher
       dockerfile: Dockerfile
     environment:
       - CRYPTOCOMPARE_API_KEY=5b4601e1b2be7c779dca7ef5e5011c9b2f246c6cb6bd32baf709f5817a46cbf1
@@ -32,12 +32,23 @@ services:
     restart: "always"
     image: "raw-crypto-rate"
     build:
-      context: ./services/raw-crypto-rate
+      context: ./Backend/services/raw-crypto-rate
       dockerfile: Dockerfile
     depends_on:
       - "db"
     ports:
       - 6003:3000
+  crypto-rates-app:
+    restart: "always"
+    image: "crypto-rates-app"
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+      - "49153:49153"
+    volumes:
+      - "/app/node_modules"
   #db
   db:
     image: mysql:5.7
