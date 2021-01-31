@@ -4,15 +4,6 @@ import { SourceFetcherBase } from "./source-fetcher-base";
 
 @Injectable()
 export class CoinmarketcapFetcher extends SourceFetcherBase {
-    // url: string = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
-    // source: string = 'coinmarketcap';
-    // apiKey: string = '6814b18d-4c0a-41f8-8d7a-d08dae63515b';
-    // params: {
-    //     "start": "1",
-    //     "limit": "10",
-    //     "convert": "USD"
-    // };
-
     url: string = process.env.COINMARKETCAP_API_URL;
     source: string = 'Coinmarketcap';
     apiKey: string = process.env.COINMARKETCAP_API_KEY;;

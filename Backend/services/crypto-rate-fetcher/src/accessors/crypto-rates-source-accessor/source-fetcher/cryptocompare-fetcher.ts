@@ -4,7 +4,6 @@ import { SourceFetcherBase } from "./source-fetcher-base";
 
 @Injectable()
 export class CryptocompareFetcher extends SourceFetcherBase {
-    //https://min-api.cryptocompare.com/data/pricemulti?fsyms=ETH,BTC&tsyms=USD
     url: string = process.env.CRYPTOCOMPARE_API_URL;
     source: string = 'Cryptocompare';
     apiKey: string = process.env.CRYPTOCOMPARE_API_KEY;
