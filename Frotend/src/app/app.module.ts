@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HistoricalRatesComponent } from './crypto-rates/historical-rates/historical-rates.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { MatPaginatorModule, MatTableModule, MatTabsModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatListModule, MatPaginatorModule, MatTableModule, MatTabsModule } from '@angular/material';
 import { AverageRateComponent } from './crypto-rates/average-rate/average-rate.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
@@ -15,11 +15,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ShoutboxComponent } from './shoutbox/shoutbox.component';
 @NgModule({
   declarations: [
     AppComponent,
     HistoricalRatesComponent,
     AverageRateComponent,
+    ShoutboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,9 @@ import { CommonModule } from '@angular/common';
     MatTableModule,
     MatPaginatorModule,
     MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatListModule,
     HttpClientModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([CryptoRatesEffects]),

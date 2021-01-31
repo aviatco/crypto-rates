@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  dashboard:
+  crypto-rates-app:
     build: .
     ports:
       - "4200:4200"
