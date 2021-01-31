@@ -15,7 +15,6 @@ These instructions will get you a copy of the project up and running on your loc
 ## Prerequisites
 First make sure that the following installed on your machine:
 > - npm
-> - nestjs
 > - angular
 > - For windows you can install docker desktop for windows: https://docs.docker.com/docker-for-windows/install/
 
