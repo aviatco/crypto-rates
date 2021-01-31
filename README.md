@@ -3,7 +3,9 @@
 >
 > Fetching crypto rates data every 2 minutes
 >
-> currently support fetching data from:
+> Frontend is updeting with average rates evry 2.5 minutes
+>
+> Currently support fetching data from:
 > - coinmarketcap.com
 > - cryptocompare.com
 
@@ -20,6 +22,7 @@ First make sure that the following installed on your machine:
 ## Run project
 Run frontend:
 > - cd Frontend
+> - npm i
 > - npm run build
 > - npm start
 

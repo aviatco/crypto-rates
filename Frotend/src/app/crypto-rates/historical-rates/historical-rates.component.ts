@@ -4,7 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
 import { CryptoRateDto } from '../Dtos/crypto-rate-dto';
 import { CryptoRateFacade } from '../facade/crypto-rate-facade';
-const TOTAL_COUNT_RATE_SCHEDULER_TIME = 60000;
+const TOTAL_COUNT_RATE_SCHEDULER_TIME = 150000;
 
 @Component({
   selector: 'app-historical-rates',

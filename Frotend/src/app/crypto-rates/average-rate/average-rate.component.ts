@@ -3,7 +3,7 @@ import { Observable, of, Subscription } from 'rxjs';
 import { catchError, take } from 'rxjs/operators';
 import { AvgRateDto } from '../Dtos/Avg-rate-dto';
 import { CryptoRateFacade } from '../facade/crypto-rate-facade';
-const AVG_RATE_SCHEDULER_TIME = 60000;
+const AVG_RATE_SCHEDULER_TIME = 150000;
 
 @Component({
   selector: 'app-average-rate',
