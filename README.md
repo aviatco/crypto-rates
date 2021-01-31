@@ -20,18 +20,18 @@ First make sure that the following installed on your machine:
 
 ## Run project
 Run frontend:
-> cd Frontend
+> - cd Frontend
 >
-> npm run build
+> - npm run build
 >
-> npm start
+> - npm start
 
 Run backend
-> cd Backend
+> - cd Backend
 >
-> docker-compose build
+> - docker-compose build
 >
-> docker-compose up
+> - docker-compose up
 
 # Author
 Aviat Cohen
