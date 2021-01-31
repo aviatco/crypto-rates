@@ -13,17 +13,13 @@
 These instructions will get you a copy of the project up and running on your local machine for development. testing will be supported in the future
 
 ## Prerequisites
-First make sure that the following installed on your machine:
-> - npm
-> - angular
 > - For windows you can install docker desktop for windows: https://docs.docker.com/docker-for-windows/install/
 
 ## Run project
 Run frontend:
 > - cd Frontend
-> - npm i
-> - npm run build
-> - npm start
+> - docker-compose build
+> - docker-compose up
 
 Run backend
 > - cd Backend
