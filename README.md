@@ -1,7 +1,10 @@
 # crypto-rates
 > Web app that gets latest rates for **BTC-USD**, **ETH-USD** and **LTC-USD**
+>
 > Fetching crypto rates data every 2 minutes
+>
 > currently support fetching data from:
+>
 > - coinmarketcap.com
 > - cryptocompare.com
 
@@ -18,12 +21,16 @@ First make sure that the following installed on your machine:
 ## Run project
 Run frontend:
 > cd Frontend
+>
 > npm run build
+>
 > npm start
 
 Run backend
 > cd Backend
+>
 > docker-compose build
+>
 > docker-compose up
 
 # Author
